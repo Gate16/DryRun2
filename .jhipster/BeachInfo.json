@@ -1,0 +1,30 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "region",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "beach",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "excellent",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "satisfactory",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "unsatisfactory",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20160725131818",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "beach_info",
+    "pagination": "no"
+}

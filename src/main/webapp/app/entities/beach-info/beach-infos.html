@@ -1,0 +1,64 @@
+<div>
+    <h2>Beach Infos</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="beach-info.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Create new Beach Info
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>Region</span></th>
+                    <th><span>Beach</span></th>
+                    <th><span>Excellent</span></th>
+                    <th><span>Satisfactory</span></th>
+                    <th><span>Unsatisfactory</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="beachInfo in vm.beachInfos track by beachInfo.id">
+                    <td><a ui-sref="beach-info-detail({id:beachInfo.id})">{{beachInfo.id}}</a></td>
+                    <td>{{beachInfo.region}}</td>
+                    <td>{{beachInfo.beach}}</td>
+                    <td>{{beachInfo.excellent}}</td>
+                    <td>{{beachInfo.satisfactory}}</td>
+                    <td>{{beachInfo.unsatisfactory}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="beach-info-detail({id:beachInfo.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="beach-info.edit({id:beachInfo.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="beach-info.delete({id:beachInfo.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
