@@ -19,7 +19,7 @@
         The initial schema has the '00000000000001' id, so that it is over-written if we re-generate it.
     -->
     <changeSet id="00000000000001" author="jhipster">
-        
+
         <createTable tableName="jhi_user">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
@@ -51,7 +51,7 @@
             <column name="last_modified_by" type="varchar(50)"/>
             <column name="last_modified_date" type="timestamp"/>
         </createTable>
-        
+
         <createIndex indexName="idx_user_login"
             tableName="jhi_user"
             unique="true">
@@ -63,7 +63,7 @@
             unique="true">
             <column name="email" type="varchar(100)"/>
         </createIndex>
-        
+
         <createTable tableName="jhi_authority">
             <column name="name" type="varchar(50)">
                 <constraints primaryKey="true" nullable="false"/>
@@ -129,7 +129,7 @@
                   file="config/liquibase/users_authorities.csv"
                   separator=";"
                   tableName="jhi_user_authority"/>
-        
+
         <createTable tableName="jhi_persistent_audit_event">
             <column name="event_id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
@@ -170,7 +170,44 @@
                                  constraintName="fk_evt_pers_audit_evt_data"
                                  referencedColumnNames="event_id"
                                  referencedTableName="jhi_persistent_audit_event"/>
-    
+
     </changeSet>
-    
+
+    <changeSet id="id7" author="jhipster">
+
+        <createTable tableName="beach_info">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="region" type="varchar(255)"/>
+            <column name="beach" type="varchar(255)"/>
+            <column name="excellent" type="DOUBLE"/>
+            <column name="satisfactory" type="DOUBLE"/>
+            <column name="unsatisfactory" type="DOUBLE"/>
+
+            <column name="created_by" type="varchar(50)">
+            </column>
+            <column name="created_date" type="timestamp" defaultValueDate="${now}">
+            </column>
+            <column name="reset_date" type="timestamp">
+            </column>
+            <column name="last_modified_by" type="varchar(50)"/>
+            <column name="last_modified_date" type="timestamp"/>
+
+        </createTable>
+
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/beach_info.csv"
+                  separator=";"
+                  tableName="beach_info">
+            <column name="region" type="STRING"/>
+            <column name="beach" type="STRING"/>
+            <column name="excellent" type="NUMERIC"/>
+            <column name="satisfactory" type="NUMERIC"/>
+            <column name="unsatisfactory" type="NUMERIC"/>
+        </loadData>
+
+
+    </changeSet>
+
 </databaseChangeLog>
