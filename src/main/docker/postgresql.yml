@@ -1,0 +1,12 @@
+version: '2'
+services:
+    greatwalks-postgresql:
+        container_name: greatwalks-postgresql
+        image: postgres:9.5.2
+        # volumes:
+        #     - ~/volumes/jhipster/GreatWalks/postgresql/:/var/lib/postgresql/
+        environment:
+            - POSTGRES_USER=GreatWalks
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432
