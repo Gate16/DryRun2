@@ -128,7 +128,7 @@ public class BeachInfoResource {
     }
     
     @RequestMapping(value = "/regions",
-        method = RequestMethod.POST,
+        method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
     public List<BeachInfo> createUser() throws URISyntaxException {
@@ -137,7 +137,7 @@ public class BeachInfoResource {
     }
 
     @RequestMapping(value = "/beach",
-        method = RequestMethod.POST,
+        method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
     public List<BeachInfo> createUser(@RequestParam(value="region") String region) throws URISyntaxException {
@@ -146,7 +146,7 @@ public class BeachInfoResource {
     }
 
     @RequestMapping(value = "/info",
-        method = RequestMethod.POST,
+        method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
     public List<BeachInfo> getInfo(@RequestParam(value="region") String region,
