@@ -8,7 +8,7 @@
     Beach.$inject = ['$resource'];
 
     function Beach ($resource) {
-        var service = $resource('api/beach', {}, {
+        var service = $resource('api/beach?region=:region', {}, {
             'query': {method: 'GET', isArray: true},
             'get': {
                 method: 'GET',

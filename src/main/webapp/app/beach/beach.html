@@ -1,12 +1,33 @@
 <div ng-cloak>
-    <div class="row">
+
         <div class="col-md-4">
             <span class="beach img-responsive img-rounded"></span>
         </div>
         <div class="col-md-8">
             <h1>Welcome, Beach!</h1>
-
-	
+            <div class="container-fluid">
+          <div class="row">
+          	<div class="col-md-2">
+          		
+          	</div>
+          	<div class="col-md-6">
+   			<div class="btn-group">
+		        <label type="button" ng-repeat="r in regions" class="btn btn-primary" ng-model="vm.selectedRegion" uib-btn-radio="'{{r}}'">{{r}}</label>
+	   		</div>
+	   		</div>
+   		</div>
+   		<div class="row">
+	   			<div class="col-md-2">
+		   		<div class="btn-group-vertical">
+			        <label type="button" ng-repeat="b in beaches" class="btn btn-primary" ng-model="vm.selectedBeach" uib-btn-radio="'{{b}}'">{{b}}</label>
+		   		</div>
+		   		</div>
+		   		<div class="col-md-6" >
+		   			<h2>{{vm.info.beach}}</h2>
+		   			<h5>{{vm.info.region}}</h5>
+		   		</div>
+			</div>
+		
         </div>
-    </div>
+	</div>
 </div>
