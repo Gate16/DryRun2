@@ -132,3 +132,5 @@ Desktop.ini
 # ESLint
 ######################
 .eslintcache
+
+**/bower_components/*
