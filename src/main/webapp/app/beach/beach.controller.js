@@ -1,15 +1,15 @@
 (function() {
 	'use strict';
 
-	angular
-		.module('greatWalksApp')
-		.controller('BeachController', BeachController);
+	angular.module('greatWalksApp').controller('BeachController',
+			BeachController);
 
 	BeachController.$inject = [ '$scope', 'Principal', 'LoginService',
-			'Region', 'Beach', 'Info', '$state', 'uiGmapGoogleMapApi' ];
+			'Region', 'Beach', 'Info', '$state', 'uiGmapGoogleMapApi',
+			'Location' ];
 
 	function BeachController($scope, Principal, LoginService, Region, Beach,
-			Info, $state, uiGmapGoogleMapApi) {
+			Info, $state, uiGmapGoogleMapApi, Location) {
 
 		var vm = this;
 
@@ -26,11 +26,10 @@
 		vm.selectedRegion = null;
 		vm.selectedBeach = null;
 		vm.info = null;
-		
+
 		uiGmapGoogleMapApi.then(function(maps) {
-			
-		 });
-		
+
+		});
 
 		getRegions();
 
@@ -56,6 +55,28 @@
 				vm.info = result[0];
 				// setBeachMap();
 			});
+			Location.query({
+				beach : beach
+			}, function(result) {
+				if (result[0] == null) {
+					$scope.map = {
+						center : {
+							latitude : -41,
+							longitude : 174
+						},
+						zoom : 4
+					};
+				} else {
+					$scope.map = {
+						center : {
+							latitude : result[0].latitude,
+							longitude : result[0].longitude
+						},
+						zoom : result[0].zoomlevel
+					};
+				}
+
+			});
 		}
 
 		$scope.$watchCollection('vm.selectedRegion', function() {
@@ -71,8 +92,6 @@
 				getInfo(vm.selectedRegion, vm.selectedBeach);
 			}
 		});
-		
-
 
 	}
 })();

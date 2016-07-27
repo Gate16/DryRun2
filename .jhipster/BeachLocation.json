@@ -1,0 +1,26 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "beachname",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "longitude",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "latitude",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "zoomlevel",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20160727104141",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "beach_location",
+    "pagination": "no"
+}

@@ -1,0 +1,30 @@
+
+<div>
+    <h2><span>Beach Location</span> {{vm.beachLocation.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Beachname</span></dt>
+        <dd>
+            <span>{{vm.beachLocation.beachname}}</span>
+        </dd>
+        <dt><span>Longitude</span></dt>
+        <dd>
+            <span>{{vm.beachLocation.longitude}}</span>
+        </dd>
+        <dt><span>Latitude</span></dt>
+        <dd>
+            <span>{{vm.beachLocation.latitude}}</span>
+        </dd>
+        <dt><span>Zoomlevel</span></dt>
+        <dd>
+            <span>{{vm.beachLocation.zoomlevel}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+</div>

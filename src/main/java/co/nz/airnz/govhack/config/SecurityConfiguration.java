@@ -117,6 +117,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .antMatchers("/api/regions").permitAll()
             .antMatchers("/api/beach").permitAll()
             .antMatchers("/api/info").permitAll()
+            .antMatchers("/api/location").permitAll()
             .antMatchers("/api/**").authenticated()
             .antMatchers("/management/**").hasAuthority(AuthoritiesConstants.ADMIN)
             .antMatchers("/v2/api-docs/**").permitAll()
